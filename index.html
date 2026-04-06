@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JMD Mobile Repairing — Precision Repairs, Trusted Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-950: #040f24;
+      --blue-900: #071a3e;
+      --blue-800: #0d2d6b;
+      --blue-700: #1541a0;
+      --blue-600: #1a52c8;
+      --blue-500: #2563eb;
+      --blue-400: #3b82f6;
+      --blue-300: #93c5fd;
+      --blue-100: #dbeafe;
+      --blue-50:  #eff6ff;
+      --accent:   #38bdf8;
+      --gold:     #f59e0b;
+      --white:    #ffffff;
+      --gray-100: #f1f5f9;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-blue: 0 8px 32px rgba(37,99,235,.25);
+      --shadow-card: 0 4px 24px rgba(4,15,36,.12);
+      --font-display: 'Syne', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--gray-800);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 68px;
+      background: rgba(4,15,36,.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--white);
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--blue-300);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--blue-500);
+      color: var(--white) !important;
+      padding: .45rem 1.1rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      font-size: .85rem !important;
+      transition: background .2s, transform .15s !important;
+    }
+    .nav-cta:hover { background: var(--blue-400) !important; transform: translateY(-1px); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: var(--blue-950);
+      overflow: hidden;
+      padding: 100px 5vw 60px;
+    }
+
+    /* Animated mesh background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 65% 40%, rgba(21,65,160,.45) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(56,189,248,.12) 0%, transparent 60%);
+      animation: meshPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshPulse {
+      from { opacity: .8; transform: scale(1); }
+      to   { opacity: 1;  transform: scale(1.04); }
+    }
+
+    /* Grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(56,189,248,.1);
+      border: 1px solid rgba(56,189,248,.3);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .85rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .5; transform: scale(1.4); }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      animation: fadeUp .7s .1s ease both;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--blue-300);
+      font-weight: 300;
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+      animation: fadeUp .7s .2s ease both;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      animation: fadeUp .7s .3s ease both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--blue-500);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: .85rem 1.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(37,99,235,.45);
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-400);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(37,99,235,.55);
+    }
+    .btn-primary svg { flex-shrink: 0; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--blue-300);
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .btn-ghost:hover { color: var(--white); }
+    .btn-ghost svg { transition: transform .2s; }
+    .btn-ghost:hover svg { transform: translateX(4px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      animation: fadeUp .7s .4s ease both;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .78rem;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: .25rem;
+    }
+
+    /* Floating phone illustration */
+    .hero-visual {
+      position: absolute;
+      right: 5vw;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(340px, 38vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: floatPhone 4s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes floatPhone {
+      0%,100% { transform: translateY(-50%) translateY(0); }
+      50%      { transform: translateY(-50%) translateY(-14px); }
+    }
+
+    .phone-svg { width: 100%; filter: drop-shadow(0 30px 60px rgba(37,99,235,.5)); }
+
+    @media (max-width: 900px) { .hero-visual { display: none; } }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION COMMONS ─────────────────────────────── */
+    section { padding: 96px 5vw; }
+    .section-label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue-500);
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      color: var(--blue-950);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--gray-600);
+      max-width: 560px;
+    }
+    .section-head { margin-bottom: 3.5rem; }
+
+    /* ── SERVICES TICKER ────────────────────────────── */
+    .ticker-wrap {
+      background: var(--blue-800);
+      overflow: hidden;
+      padding: 13px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: tickerScroll 28s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: 0 2rem;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--blue-100);
+    }
+    .ticker-dot { color: var(--accent); font-size: 1.1rem; }
+    @keyframes tickerScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── BENEFITS ─────────────────────────────────── */
+    .benefits { background: var(--gray-100); }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .benefit-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      border: 1px solid rgba(37,99,235,.08);
+      box-shadow: var(--shadow-card);
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-500), var(--accent));
+      border-radius: 3px 3px 0 0;
+    }
+    .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(37,99,235,.15); }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-800), var(--blue-600));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .card-icon svg { width: 26px; height: 26px; color: var(--accent); }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--blue-950);
+      margin-bottom: .6rem;
+    }
+    .card-text {
+      font-size: .93rem;
+      line-height: 1.7;
+      color: var(--gray-600);
+    }
+
+    /* ── HOW IT WORKS ─────────────────────────────── */
+    .how-it-works { background: var(--blue-950); }
+    .how-it-works .section-title { color: var(--white); }
+    .how-it-works .section-label { color: var(--accent); }
+    .how-it-works .section-desc { color: var(--blue-300); }
+
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      transition: background .25s, border-color .25s;
+    }
+    .step-card:hover {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(56,189,248,.3);
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(37,99,235,.4);
+      line-height: 1;
+      margin-bottom: .75rem;
+      letter-spacing: -.04em;
+    }
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .6rem;
+    }
+    .step-text {
+      font-size: .9rem;
+      line-height: 1.7;
+      color: var(--blue-300);
+    }
+
+    /* ── TESTIMONIALS ─────────────────────────────── */
+    .testimonials { background: var(--blue-50); }
+
+    .testimonial-block {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-blue);
+      border: 1px solid rgba(37,99,235,.1);
+      position: relative;
+    }
+    .testimonial-block::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px; left: 2rem;
+      font-family: var(--font-display);
+      font-size: 7rem;
+      line-height: 1;
+      color: var(--blue-100);
+      font-weight: 800;
+    }
+
+    .stars {
+      display: flex;
+      gap: .2rem;
+      margin-bottom: 1.25rem;
+    }
+    .stars svg { width: 20px; height: 20px; color: var(--gold); }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: var(--gray-800);
+      font-style: italic;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .author-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--blue-950);
+      font-size: .95rem;
+    }
+    .author-role {
+      font-size: .82rem;
+      color: var(--gray-400);
+      margin-top: .15rem;
+    }
+
+    /* ── CONTACT ──────────────────────────────────── */
+    .contact { background: var(--white); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .contact-info p {
+      font-size: .95rem;
+      line-height: 1.75;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+    }
+    .info-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--blue-50);
+      border: 1px solid rgba(37,99,235,.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .info-icon svg { width: 18px; height: 18px; color: var(--blue-500); }
+    .info-text { font-size: .9rem; color: var(--gray-600); line-height: 1.6; padding-top: .45rem; }
+    .info-text strong { display: block; color: var(--blue-950); font-weight: 600; font-size: .85rem; margin-bottom: .1rem; }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-group label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--blue-950);
+      letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: .75rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: .93rem;
+      color: var(--gray-800);
+      background: var(--gray-100);
+      outline: none;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-500);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      background: var(--blue-500);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-blue);
+      transition: background .2s, transform .2s, box-shadow .2s;
+      margin-top: .5rem;
+    }
+    .form-submit:hover {
+      background: var(--blue-600);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(37,99,235,.4);
+    }
+
+    /* ── FINAL CTA BANNER ─────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-600) 60%, var(--blue-500) 100%);
+      padding: 80px 5vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(56,189,248,.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,.06) 0%, transparent 50%);
+    }
+    .cta-banner-inner { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -.025em;
+      margin-bottom: .75rem;
+    }
+    .cta-banner p {
+      color: var(--blue-100);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .cta-banner .btn-primary {
+      font-size: 1.05rem;
+      padding: .95rem 2.2rem;
+    }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--blue-950);
+      color: var(--blue-300);
+      padding: 40px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .85rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--accent); }
+    footer a { color: var(--blue-300); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--white); }
+
+    /* ── SCROLL REVEAL ───────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">JMD<span>.</span>Repair</a>
+  <ul class="nav-links">
+    <li><a href="#benefits">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#contact" class="nav-cta">Book Repair</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Trusted Mobile Repair Lab</div>
+
+    <h1>Your Phone Deserves <em>Expert Hands</em></h1>
+
+    <p class="hero-sub">
+      Advanced mobile repair lab offering precision fixes, genuine spare parts, digitizer laser lamination, lens replacement, software updates, and secure unlocking — fast, reliable, professional.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        Get Your Device Fixed Now
+      </a>
+      <a href="#how" class="btn-ghost">
+        See how it works
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5000+</div>
+        <div class="stat-label">Devices Repaired</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Customer Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24hr</div>
+        <div class="stat-label">Avg Turnaround</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Phone SVG -->
+  <div class="hero-visual">
+    <svg class="phone-svg" viewBox="0 0 260 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="240" height="500" rx="38" fill="url(#phoneBody)" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+      <rect x="22" y="22" width="216" height="476" rx="30" fill="#091835"/>
+      <!-- Screen glow -->
+      <rect x="30" y="30" width="200" height="460" rx="24" fill="url(#screenGrad)"/>
+      <!-- Status bar -->
+      <rect x="30" y="30" width="200" height="32" rx="24" fill="rgba(255,255,255,.04)"/>
+      <!-- Notch -->
+      <rect x="95" y="32" width="70" height="22" rx="11" fill="#040f24"/>
+      <!-- Tool icons on screen -->
+      <g opacity=".85">
+        <!-- Wrench icon -->
+        <circle cx="80" cy="160" r="32" fill="rgba(37,99,235,.25)" stroke="rgba(56,189,248,.4)" stroke-width="1"/>
+        <path d="M72 168l14-14m0 0l3-3a5 5 0 016-6l-4 4 3 3 4-4a5 5 0 01-6 6l-3 3" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        <!-- Screen icon -->
+        <circle cx="180" cy="160" r="32" fill="rgba(37,99,235,.25)" stroke="rgba(56,189,248,.4)" stroke-width="1"/>
+        <rect x="167" y="150" width="26" height="20" rx="3" stroke="#38bdf8" stroke-width="2"/>
+        <path d="M175 174h10" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        <!-- Battery icon -->
+        <circle cx="80" cy="260" r="32" fill="rgba(37,99,235,.25)" stroke="rgba(56,189,248,.4)" stroke-width="1"/>
+        <rect x="68" y="253" width="22" height="14" rx="2" stroke="#38bdf8" stroke-width="2"/>
+        <path d="M90 258v4" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M75 260h8" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        <!-- Check icon -->
+        <circle cx="180" cy="260" r="32" fill="rgba(37,99,235,.25)" stroke="rgba(56,189,248,.4)" stroke-width="1"/>
+        <path d="M170 260l7 7 14-14" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <!-- Bottom home area -->
+      <rect x="110" y="462" width="40" height="5" rx="2.5" fill="rgba(255,255,255,.2)"/>
+      <!-- Side buttons -->
+      <rect x="247" y="120" width="6" height="50" rx="3" fill="rgba(255,255,255,.15)"/>
+      <rect x="7" y="110" width="6" height="35" rx="3" fill="rgba(255,255,255,.12)"/>
+      <rect x="7" y="155" width="6" height="35" rx="3" fill="rgba(255,255,255,.12)"/>
+      <defs>
+        <linearGradient id="phoneBody" x1="10" y1="10" x2="250" y2="510" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#1a3a7a"/>
+          <stop offset="1" stop-color="#0d2d6b"/>
+        </linearGradient>
+        <linearGradient id="screenGrad" x1="30" y1="30" x2="230" y2="490" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#071834"/>
+          <stop offset="1" stop-color="#040f24"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
+
+<!-- ── SERVICE TICKER ────────────────────────────── -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <!-- Two copies for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Screen Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Battery Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Digitizer Laser Lamination</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Lens Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Software Updates</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Secure Unlocking</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Genuine Spare Parts</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Water Damage Repair</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Charging Port Fix</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Screen Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Battery Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Digitizer Laser Lamination</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Lens Replacement</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Software Updates</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Secure Unlocking</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Genuine Spare Parts</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Water Damage Repair</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> Charging Port Fix</span>
+  </div>
+</div>
+
+<!-- ── BENEFITS ──────────────────────────────────── -->
+<section class="benefits" id="benefits">
+  <div class="section-head reveal">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">Repair Done Right,<br>Every Single Time</h2>
+    <p class="section-desc">We combine precision technology with genuine parts and transparent pricing — giving you peace of mind with every repair.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div class="card-title">100% Genuine Parts</div>
+      <p class="card-text">We use only certified OEM and high-quality genuine spare parts — no cheap imitations. Your device deserves the real deal to perform like new.</p>
+    </div>
+
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div class="card-title">Fast Turnaround</div>
+      <p class="card-text">Most repairs are completed within 24 hours. We know life doesn't stop when your phone does — our lab is built for speed without sacrificing quality.</p>
+    </div>
+
+    <div class="benefit-card reveal reveal-delay-3">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <div class="card-title">Advanced Lab Technology</div>
+      <p class="card-text">Our lab is equipped with professional-grade tools including laser lamination machines, ultrasonic cleaners, and precision micro-soldering stations for complex repairs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ──────────────────────────────── -->
+<section class="how-it-works" id="how">
+  <div class="section-head reveal">
+    <span class="section-label">The Process</span>
+    <h2 class="section-title">Simple. Fast. Reliable.</h2>
+    <p class="section-desc">Getting your device fixed is effortless — just three steps and you're back in action.</p>
+  </div>
+
+  <div class="steps-row">
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-num">01</div>
+      <div class="step-title">Drop Off Your Device</div>
+      <p class="step-text">Bring your device to our lab or contact us for a quick consultation. We'll inspect it thoroughly and provide you with an honest, upfront quote — no hidden charges.</p>
+    </div>
+
+    <div class="step-card reveal reveal-delay-2">
+      <div class="step-num">02</div>
+      <div class="step-title">Expert Diagnosis & Repair</div>
+      <p class="step-text">Our certified technicians perform a detailed diagnosis and carry out precision repairs using genuine parts and advanced lab equipment. You'll get real-time status updates.</p>
+    </div>
+
+    <div class="step-card reveal reveal-delay-3">
+      <div class="step-num">03</div>
+      <div class="step-title">Collect & Enjoy</div>
+      <p class="step-text">Pick up your fully repaired device, tested and quality-checked. Most repairs are ready within 24 hours. We stand behind every fix with a service warranty.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ──────────────────────────────── -->
+<section class="testimonials" id="testimonials">
+  <div class="section-head reveal" style="text-align:center;">
+    <span class="section-label">Customer Stories</span>
+    <h2 class="section-title">What Our Customers Say</h2>
+  </div>
+
+  <div class="testimonial-block reveal">
+    <div class="stars">
+      <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+    </div>
+
+    <p class="testimonial-text">
+      "I had cracked my iPhone screen badly and was worried about the digitizer underneath. JMD's laser lamination service made it look and feel brand new — the display clarity is actually better than before. They finished it same day, the price was very fair, and the technician explained everything clearly. I won't take my phone anywhere else."
+    </p>
+
+    <div class="testimonial-author">
+      <div class="author-avatar">RK</div>
+      <div>
+        <div class="author-name">Rahul Kumar</div>
+        <div class="author-role">iPhone 14 Pro · Screen + Digitizer Lamination</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-label reveal">Book a Repair</span>
+      <h2 class="section-title reveal">Get Your Device Fixed Now</h2>
+      <p class="reveal">Fill out the form and our team will get back to you within minutes. Walk-ins are also welcome at our lab.</p>
+
+      <ul class="info-list reveal">
+        <li class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="info-text"><strong>Visit Our Lab</strong>JMD Mobile Repairing — Your City, State</div>
+        </li>
+        <li class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div class="info-text"><strong>Call / WhatsApp</strong>+91 XXXXX XXXXX</div>
+        </li>
+        <li class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="info-text"><strong>Working Hours</strong>Mon – Sat: 9:00 AM – 8:00 PM</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" placeholder="Rahul Kumar" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="device">Device Model</label>
+          <input type="text" id="device" placeholder="e.g. iPhone 14 Pro, Samsung S23 Ultra" />
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service">
+            <option value="" disabled selected>Select a service...</option>
+            <option>Screen Replacement</option>
+            <option>Digitizer Laser Lamination</option>
+            <option>Battery Replacement</option>
+            <option>Lens / Camera Replacement</option>
+            <option>Software Update / Flashing</option>
+            <option>Secure Unlocking</option>
+            <option>Water Damage Repair</option>
+            <option>Charging Port Repair</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Describe the Issue (optional)</label>
+          <textarea id="message" placeholder="Tell us what happened — the more detail, the better we can help..."></textarea>
+        </div>
+
+        <button type="button" class="form-submit" onclick="handleSubmit(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          Get Your Device Fixed Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA BANNER ──────────────────────────── -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Don't Let a Broken Screen Slow You Down</h2>
+    <p>Walk in today or book online — most repairs done within 24 hours, backed by a service warranty.</p>
+    <a href="#contact" class="btn-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      Book Repair Now
+    </a>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <a href="#" class="footer-logo">JMD<span>.</span>Repair</a>
+  <p>© 2025 JMD Mobile Repairing. All rights reserved.</p>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="#">Privacy Policy</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll Reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── Nav background on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 40
+      ? 'rgba(4,15,36,.97)'
+      : 'rgba(4,15,36,.82)';
+  }, { passive: true });
+
+  // ── Form submit handler
+  function handleSubmit(btn) {
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const device  = document.getElementById('device').value.trim();
+    const service = document.getElementById('service').value;
+
+    if (!name || !phone || !device || !service) {
+      btn.style.background = '#dc2626';
+      btn.textContent = '⚠ Please fill in all required fields';
+      setTimeout(() => {
+        btn.style.background = '';
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg> Get Your Device Fixed Now`;
+      }, 2500);
+      return;
+    }
+
+    btn.innerHTML = '⏳ Sending your request...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.style.background = '#16a34a';
+      btn.innerHTML = '✅ Request Received! We\'ll call you shortly.';
+      ['fname','phone','device','message'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('service').selectedIndex = 0;
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.style.background = '';
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg> Get Your Device Fixed Now`;
+      }, 4000);
+    }, 1200);
+  }
+</script>
+</body>
+</html>
